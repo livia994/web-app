@@ -1,0 +1,115 @@
+:root {
+    /* Light Theme Colors */
+    --light-bg-primary: #f8f4e5;
+    --light-bg-secondary: #ffffff;
+    --light-text-primary: #593016;
+    --light-text-secondary: #7d5a50;
+    --light-accent-primary: #e67e22;
+    --light-accent-secondary: #f8a055;
+    --light-border-color: #e0d5c1;
+    --light-shadow-color: rgba(0, 0, 0, 0.1);
+  
+    /* Dark Theme Colors */
+    --dark-bg-primary: #2c1810;
+    --dark-bg-secondary: #1a0f0a;
+    --dark-text-primary: #f8f4e5;
+    --dark-text-secondary: #d0c8ba;
+    --dark-accent-primary: #f8a055;
+    --dark-accent-secondary: #e67e22;
+    --dark-border-color: #402218;
+    --dark-shadow-color: rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Light Theme Classes */
+  .light {
+    --bg-primary: var(--light-bg-primary);
+    --bg-secondary: var(--light-bg-secondary);
+    --text-primary: var(--light-text-primary);
+    --text-secondary: var(--light-text-secondary);
+    --accent-primary: var(--light-accent-primary);
+    --accent-secondary: var(--light-accent-secondary);
+    --border-color: var(--light-border-color);
+    --shadow-color: var(--light-shadow-color);
+  }
+  
+  /* Dark Theme Classes */
+  .dark {
+    --bg-primary: var(--dark-bg-primary);
+    --bg-secondary: var(--dark-bg-secondary);
+    --text-primary: var(--dark-text-primary);
+    --text-secondary: var(--dark-text-secondary);
+    --accent-primary: var(--dark-accent-primary);
+    --accent-secondary: var(--dark-accent-secondary);
+    --border-color: var(--dark-border-color);
+    --shadow-color: var(--dark-shadow-color);
+  }
+  
+  /* Transition for theme switching */
+  body, button, a, input, textarea, select, .theme-transition {
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
+  }
+  
+  /* Cookie crumb designs for loading */
+  .cookie-crumb {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--accent-primary);
+    position: absolute;
+  }
+  
+  .cookie-bite {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: var(--accent-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .cookie-bite::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    right: -2px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--bg-primary);
+  }
+  
+  /* Animations for loading */
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  @keyframes fade {
+    0%, 100% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+  
+  .loading .cookie-crumb:nth-child(1) {
+    animation: bounce 1s ease-in-out infinite;
+    animation-delay: 0s;
+  }
+  
+  .loading .cookie-crumb:nth-child(2) {
+    animation: bounce 1s ease-in-out infinite;
+    animation-delay: 0.2s;
+  }
+  
+  .loading .cookie-crumb:nth-child(3) {
+    animation: bounce 1s ease-in-out infinite;
+    animation-delay: 0.4s;
+  }
