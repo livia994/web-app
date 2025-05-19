@@ -1,0 +1,125 @@
+.home {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    padding: 0 2rem;
+    overflow: hidden;
+  }
+  
+  /* Optional: if using inline style backgroundImage in React, this overlay still applies */
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 36rem;
+    color: white;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  .hero p {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-button {
+    display: inline-block;
+    background-color: #e67e22;
+    color: white;
+    font-weight: 700;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+  }
+  
+  .hero-button:hover {
+    background-color: #d35400;
+  }
+  
+  .quick-order {
+    padding: 2rem;
+  }
+  
+  .quick-order h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    color: #593016;
+  }
+  
+  .quick-order-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  
+  .quick-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .quick-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .quick-add {
+    background-color: #e67e22;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.5rem;
+    font-size: 1.25rem;
+    transition: transform 0.2s;
+  }
+  
+  .quick-add:hover {
+    transform: scale(1.1);
+  }
+  
+  .home.dark .quick-order h2 {
+    color: #f8f4e5;
+  }
+  
+  @media (min-width: 768px) {
+    .mobile-only {
+      display: none;
+    }
+  
+    .hero h1 {
+      font-size: 3.75rem;
+    }
+  
+    .hero p {
+      font-size: 1.5rem;
+    }
+  }
+  
