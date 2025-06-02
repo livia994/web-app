@@ -1,7 +1,7 @@
-// src/components/CookieCard.js
 import React, { useContext } from 'react';
 import { CartContext } from '../contexts/CartContext';
 import { ThemeContext } from '../contexts/ThemeContext';
+import imageMap from '../assets/imageMap'; 
 import '../styles/components/CookieCard.css';
 
 const CookieCard = ({ cookie }) => {
@@ -12,10 +12,12 @@ const CookieCard = ({ cookie }) => {
     addToCart(cookie);
   };
 
+  const imageSrc = imageMap[cookie.image] || '';
+
   return (
     <div className={`cookie-card ${theme}`}>
       <div className="cookie-image">
-        <img src={cookie.image} alt={cookie.name} />
+        <img src={imageSrc} alt={cookie.name} />
       </div>
       <div className="cookie-info">
         <h3>{cookie.name}</h3>
