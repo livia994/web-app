@@ -1,12 +1,19 @@
-// src/components/Cart.js
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../contexts/CartContext';
 import { ThemeContext } from '../contexts/ThemeContext';
+import imageMap from '../assets/imageMap';
 import '../styles/components/Cart.css';
 
 const Cart = () => {
-  const { cart, removeFromCart, addToCart, decreaseQuantity, clearCart, cartTotal } = useContext(CartContext);
+  const {
+    cart,
+    removeFromCart,
+    addToCart,
+    decreaseQuantity,
+    clearCart,
+    cartTotal
+  } = useContext(CartContext);
   const { theme } = useContext(ThemeContext);
 
   if (cart.length === 0) {
@@ -28,7 +35,7 @@ const Cart = () => {
         {cart.map(item => (
           <div key={item.id} className="cart-item">
             <div className="item-image">
-              <img src={item.image} alt={item.name} />
+              <img src={imageMap[item.image]} alt={item.name} />
             </div>
             <div className="item-details">
               <h3>{item.name}</h3>
