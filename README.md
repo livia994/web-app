@@ -10,23 +10,43 @@ A **full-stack Cookie Shop application** built with **React (front-end)** and **
 ✅ Cart functionality
 
 ## 🗂️ Project Structure
-
-app/
-public/images/            # Cookie images
-src/
-components/             # Reusable React components
-contexts/               # Theme and cart contexts
-data/                   # Cookie data and JWT token handling
-pages/                  # Product and informational pages
-styles/                 # CSS styling
-server/
-data/cookies.js           # Backend cookie data
-middleware/auth.js        # JWT authentication middleware
-routes/cookies.js         # CRUD API for cookies
-utils/generateToken.js    # JWT token generator
-swagger.js                # Swagger specification
-index.js                  # Express server entry point
-
+.
+├── public/
+│   └── images/                # Cookie images accessible to React front-end
+│
+├── server/                    # Back-end Node.js API
+│   ├── data/
+│   │   ├── cookies.js         # Cookie data served via API
+│   ├── middleware/
+│   │   └── auth.js            # JWT authentication middleware
+│   ├── routes/
+│   │   └── cookies.js         # CRUD API routes for cookies
+│   ├── utils/
+│   │   └── generateToken.js   # JWT token generation utility
+│   ├── swagger.js             # Swagger documentation config
+│   ├── index.js               # Express server entry point
+│   ├── package.json
+│
+├── src/                       # Front-end React application
+│   ├── assets/                # Static assets (imageMap)
+│   ├── components/            # Reusable React components
+│   ├── contexts/              # React Contexts for theme, cart, etc.
+│   ├── data/                  # Front-end cookie data or token handling
+│   ├── hooks/                 # Custom React hooks (e.g., useLocalStorage)
+│   ├── pages/                 # Page components (Products, About, Contact, etc.)
+│   │   ├── About.js
+│   │   ├── Contact.js
+│   │   ├── Home.js
+│   │   ├── Products.js
+│   │   └── SpecialOffers.js
+│   ├── styles/                # CSS files and page styling
+│   ├── api.js                 # API connection helper 
+│   ├── App.js
+│   ├── App.css
+│   ├── index.js               # React entry point
+│
+├── package.json               # Project dependencies and scripts
+└── README.md                  # Project overview
 
 ## 🚀 Features
 
